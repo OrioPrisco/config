@@ -7,7 +7,7 @@ set mouse=a
 
 " invisible chars
 set list
-set listchars=tab:▸\ ,eol:¬,space:⸱,trail:·
+set listchars=tab:\|\ ,eol:¬,space:⸱,trail:·
 hi SpecialKey ctermfg=grey
 
 " https://stackoverflow.com/questions/2574027/automatically-go-to-next-line-in-vim
