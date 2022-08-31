@@ -32,7 +32,7 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 	
 $(NAME): $(OBJS)
-	 gcc -c $(CFLAGS) -I$(HEADER_FOLDER) $(OBJS) -o $(NAME)
+	 gcc $(CFLAGS) -I$(HEADERS_FOLDER) $(OBJS) -o $(NAME)
 
 $(OBJ_FOLDER)%.o : $(SRC_FOLDER)%.c
 	gcc -c $(CFLAGS) -I$(HEADERS_FOLDER) $< -o $@
