@@ -4,6 +4,7 @@ set shiftwidth=4
 set autoindent
 set smartindent
 set mouse=a
+set autochdir
 
 " invisible chars
 set list
@@ -25,3 +26,13 @@ set backspace=indent,eol,start
 " https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
 autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+
+" https://stackoverflow.com/a/34992101
+" autoclosing of parens brackets and the like
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
