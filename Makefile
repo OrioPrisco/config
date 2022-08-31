@@ -6,7 +6,7 @@
 #    By: OrioPrisco <47635210+OrioPrisco@users      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/23 15:27:59 by OrioPrisc         #+#    #+#              #
-#    Updated: 2023/04/21 12:00:31 by OrioPrisc        ###   ########.fr        #
+#    Updated: 2023/04/21 12:01:03 by OrioPrisc        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,8 +43,10 @@ ifneq ($(strip $(foreach f,$(OBJS),$(wildcard $(f)))),)
 endif
 
 fclean: clean
-ifneq ($(wildcard($(NAME)),)
+ifneq ($(wildcard $(NAME)),)
 	rm $(NAME)
 endif
 
 re: fclean all
+
+.PHONY: all clean fclean re
