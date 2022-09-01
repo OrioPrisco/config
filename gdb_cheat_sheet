@@ -1,63 +1,66 @@
 ##Compile with debug flags
-simple as that:
+"simple as that:"
 gcc -ggdb
 
 
 ##activate TUI mode :
-use any of these:
+"use any of these:"
 layout src
 CTRL+X o
 tui enable
 
 
 ##Switch between TUI windows
-you must let go of ctrl+x before pressing o:
+"you must let go of ctrl+x before pressing o:"
 CTRL+X o
 
 ##Program Flow
-args are optionals :
+"args are optionals :""
 start <args>
 run   <args>
 
-you can just use the letter inside the parenthesis :
+"you can just use the letter inside the parenthesis :""
 (c)ontinue
 (n)ext
 (s)tep
 
-simply doing break adds a brakpoint on the current line:
+"simply doing break adds a brakpoint on the current line:""
 break <line_number/function_name/file_name.c:line_number>
 
-simply pressing enter redoes the last commad. Very nice for stepping
+"simply pressing enter redoes the last commad. Very nice for stepping""
 break
 
 ##Get info
-display will print the expression at every stop.
-Watch will halt every time the var is changed
+"display will print the expression at every stop."
+"Watch will halt every time the var is changed"
 (p)rint <var/expression>
 display <var/expression>
 watch   <var>
 
-Get info about breaks/displays:
+"Get info about breaks/displays:"
 info <break/display>
 
-Remove break/display:
+"Remove break/display:""
 (d)elete  <break#>
 undisplay <display#>
 
-you can know who called who using this:
+"you can know who called who using this:"
 bt
 
-and you can know what is going on elsewhere using this:
+"and you can know what is going on elsewhere using this:"
 frame apply level <lvl> <command>
 
+##Modify variables
+"Reality can be whatever i want:"
+set <var> = <expr>
 
 ##Reload executable
-very nice to keep your breakpoints and watches:
+"very nice to keep your breakpoints and watches:"
 file <name>
 directory
 
 ##Shell commands
-it's just like vim
+"it's just like vim"
 !<command>
 
 ##RTFM
