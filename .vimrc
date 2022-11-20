@@ -54,3 +54,5 @@ set hlsearch
 "https://stackoverflow.com/questions/486027/close-a-split-window-in-vim-without-resizing-other-windows
 "no window resizing when splitting/closing
 set noea
+
+source ~/layout.vim
