@@ -36,10 +36,17 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
-vnoremap <C-c> :w !xsel -i -b<CR><CR>
 
 "inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == """ ? "\<Right>" : "\""
 "inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "'" ? "\<Right>" : "\'"
 inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 inoremap <expr> ] strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
 inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+
+" https://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-in-vim
+" press ctr c to copy to clipboard
+vnoremap <C-c> :w !xsel -i -b<CR><CR>
+
+"https://vim.fandom.com/wiki/Highlight_all_search_pattern_matches
+" highlight matches
+set hlsearch
