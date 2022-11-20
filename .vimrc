@@ -36,7 +36,7 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
-vnoremap <C-c> :w !pbcopy<CR><CR>
+vnoremap <C-c> :w !xsel -i -b<CR><CR>
 
 "inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == """ ? "\<Right>" : "\""
 "inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "'" ? "\<Right>" : "\'"
