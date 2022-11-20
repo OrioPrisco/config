@@ -50,3 +50,7 @@ vnoremap <C-c> :w !xsel -i -b<CR><CR>
 "https://vim.fandom.com/wiki/Highlight_all_search_pattern_matches
 " highlight matches
 set hlsearch
+
+"https://stackoverflow.com/questions/486027/close-a-split-window-in-vim-without-resizing-other-windows
+"no window resizing when splitting/closing
+set noea
