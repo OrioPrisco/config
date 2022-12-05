@@ -106,5 +106,6 @@ alias compile="norminette ft_*.c && gcc ft_*.c main*.c -o a.out && ./a.out"
 
 export MAIL="47635210+OrioPrisco@users.noreply.github.com"
 alias lvim="vim -c Layout1"
+export EDITOR="vim"
 
 eval $(thefuck --alias)
