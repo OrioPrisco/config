@@ -6,7 +6,7 @@
 #    By: OrioPrisco <47635210+OrioPrisco@users      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/23 15:27:59 by OrioPrisc         #+#    #+#              #
-#    Updated: 2023/04/21 12:04:18 by OrioPrisc        ###   ########.fr        #
+#    Updated: 2023/04/21 12:05:30 by OrioPrisc        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,10 +32,10 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 	
 $(NAME): $(OBJS)
-	 gcc $(CFLAGS) -I$(HEADERS_FOLDER) $(OBJS) -o $(NAME)
+	 gcc $(CFLAGS) $(addprefix -I,$(HEADERS_FOLDER)) $(OBJS) -o $(NAME)
 
 $(OBJ_FOLDER)%.o : $(SRC_FOLDER)%.c
-	gcc -c $(CFLAGS) -I$(HEADERS_FOLDER) $< -o $@
+	gcc -c $(CFLAGS)$(addprefix -I,$(HEADERS_FOLDER)) $< -o $@
 
 clean:
 ifneq ($(strip $(foreach f,$(OBJS),$(wildcard $(f)))),)
