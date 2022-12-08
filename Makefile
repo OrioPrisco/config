@@ -38,14 +38,10 @@ $(OBJ_FOLDER)%.o : $(SRC_FOLDER)%.c
 	gcc -c $(CFLAGS)$(addprefix -I,$(HEADERS_FOLDER)) $< -o $@
 
 clean:
-ifneq ($(strip $(foreach f,$(OBJS),$(wildcard $(f)))),)
-	rm -f $(strip $(foreach f,$(OBJS),$(wildcard $(f))))
-endif
+	rm -f $(OBJS)
 
 fclean: clean
-ifneq ($(wildcard $(NAME)),)
-	rm $(NAME)
-endif
+	rm -f $(NAME)
 
 re: fclean all
 
