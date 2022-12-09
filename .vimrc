@@ -56,3 +56,5 @@ set hlsearch
 set noea
 
 source ~/layout.vim
+
+set incsearch
