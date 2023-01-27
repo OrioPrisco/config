@@ -57,4 +57,5 @@ set noea
 
 source ~/layout.vim
 
+"highlight match while typing command
 set incsearch
