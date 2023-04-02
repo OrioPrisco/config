@@ -59,3 +59,6 @@ source ~/layout.vim
 
 "highlight match while typing command
 set incsearch
+
+" ALE : enable all linters for c and rust
+let g:ale_linters = {'rust' : 'all', 'c' : 'all'}
