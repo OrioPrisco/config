@@ -109,3 +109,6 @@ alias lvim="vim -c Layout1"
 export EDITOR="vim"
 
 eval $(thefuck --alias)
+
+export PATH="$PATH:$HOME/bin/:$HOME/.local/bin"
+alias neofetch='neofetch --ascii /home/orio/neoart.txt --ascii_colors 208'
