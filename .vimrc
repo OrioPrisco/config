@@ -63,9 +63,6 @@ set incsearch
 " ALE : enable all linters for c and rust
 let g:ale_linters = {'rust' : 'all', 'c' : 'all'}
 
-"https://www.alexeyshmalko.com/2014/using-vim-as-c-cpp-ide/
-"set .h files a c files
-augroup project
-	autocmd!
-	autocmd BufRead,BufNewFile *.h,*.c set filetype=c
-augroup END declare .h files as c files instead of cpp
+"https://stackoverflow.com/questions/65697179/vim-airline-interpreting-h-files-as-cpp-not-c
+"use c filetype for .h files
+let g:c_syntax_for_h = 1
