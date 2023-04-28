@@ -66,3 +66,6 @@ let g:ale_linters = {'rust' : 'all', 'c' : 'all'}
 "https://stackoverflow.com/questions/65697179/vim-airline-interpreting-h-files-as-cpp-not-c
 "use c filetype for .h files
 let g:c_syntax_for_h = 1
+
+"ignore norminette in this buffer"
+command NoNorm let  b:ale_linters_ignore = {'c' : ['norminette']}
