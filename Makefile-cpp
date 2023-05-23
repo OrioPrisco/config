@@ -6,7 +6,7 @@
 #    By: OrioPrisco <47635210+OrioPrisco@users      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/11 11:29:48 by OrioPrisc         #+#    #+#              #
-#    Updated: 2023/05/23 14:45:03 by OrioPrisc        ###   ########.fr        #
+#    Updated: 2023/05/23 17:01:53 by OrioPrisc        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ CC				=	c++
 SRC				=	
 
 NAME			=	
-BONUS			=	
 
 OBJ_FOLDER		=	objs/
 
@@ -44,7 +43,7 @@ CONCAT = awk 'FNR==1 && NR!=1 {print ","}{print}'
 $(OBJ_FOLDER):
 	mkdir $(OBJ_FOLDER)
 
-$(OBJ_FOLDER)%.o $(OBJ_FOLDER)%.cc: $(SRC_FOLDER)%.c Makefile $(SUBMODULES) | $(OBJ_FOLDER)
+$(OBJ_FOLDER)%.o $(OBJ_FOLDER)%.cc: $(SRC_FOLDER)%.c Makefile | $(OBJ_FOLDER)
 	$(COMP_COMMAND)
 	@printf '{\n\t"directory" : "$(shell pwd)",\n\t"command" : "$(COMP_COMMAND)",\n\t"file" : "$<"\n}' > $(OBJ_FOLDER)$*.cc
 
@@ -54,15 +53,11 @@ compile_commands.json : $(COMMANDS) Makefile
 	@$(CONCAT) $(COMMANDS) >> compile_commands.json
 	@echo "]" >> compile_commands.json
 
-clean: $(SUBMODULES)
-	rm -f $(OBJS) $(BONUS_OBJS) $(DEPENDS) $(COMMANDS)
-	for lib in $(shell dirname $(LIBS)); do \
-		make -C $$lib clean; \
-	done
+clean:
+	rm -f $(OBJS) $(DEPENDS) $(COMMANDS)
 
-fclean: clean $(SUBMODULES)
-	rm -f $(NAME) $(BONUS) compile_commands.json
-	make -C libft fclean
+fclean: clean
+	rm -f $(NAME) compile_commands.json
 
 re: fclean all
 
