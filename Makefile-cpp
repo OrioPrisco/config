@@ -6,7 +6,7 @@
 #    By: OrioPrisco <47635210+OrioPrisco@users      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/11 11:29:48 by OrioPrisc         #+#    #+#              #
-#    Updated: 2023/05/23 17:01:53 by OrioPrisc        ###   ########.fr        #
+#    Updated: 2023/05/23 17:16:01 by OrioPrisc        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,16 +26,16 @@ HEADERS_FOLDER	=	./
 
 LFLAGS			=
 
-DEPENDS		:=	$(patsubst %.c,$(OBJ_FOLDER)%.d,$(SRC))
-OBJS		:=	$(patsubst %.c,$(OBJ_FOLDER)%.o,$(SRC))
-COMMANDS	:=	$(patsubst %.c,$(OBJ_FOLDER)%.cc,$(SRC))
+DEPENDS		:=	$(patsubst %.cpp,$(OBJ_FOLDER)%.d,$(SRC))
+OBJS		:=	$(patsubst %.cpp,$(OBJ_FOLDER)%.o,$(SRC))
+COMMANDS	:=	$(patsubst %.cpp,$(OBJ_FOLDER)%.cc,$(SRC))
 
 all: $(NAME) compile_commands.json
 
 -include $(DEPENDS)
 
 $(NAME): $(LIBS) $(OBJS)
-	cc $(CFLAGS) $(OBJS) $(LFLAGS) -o $@
+	$(CC) $(CFLAGS) $(OBJS) $(LFLAGS) -o $@
 
 COMP_COMMAND = $(CC) -c $(CFLAGS) $(addprefix -I,$(HEADERS_FOLDER)) -MMD -MP $< -o $@
 CONCAT = awk 'FNR==1 && NR!=1 {print ","}{print}'
@@ -43,7 +43,7 @@ CONCAT = awk 'FNR==1 && NR!=1 {print ","}{print}'
 $(OBJ_FOLDER):
 	mkdir $(OBJ_FOLDER)
 
-$(OBJ_FOLDER)%.o $(OBJ_FOLDER)%.cc: $(SRC_FOLDER)%.c Makefile | $(OBJ_FOLDER)
+$(OBJ_FOLDER)%.o $(OBJ_FOLDER)%.cc: $(SRC_FOLDER)%.cpp Makefile | $(OBJ_FOLDER)
 	$(COMP_COMMAND)
 	@printf '{\n\t"directory" : "$(shell pwd)",\n\t"command" : "$(COMP_COMMAND)",\n\t"file" : "$<"\n}' > $(OBJ_FOLDER)$*.cc
 
