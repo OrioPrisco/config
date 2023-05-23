@@ -6,7 +6,7 @@
 #    By: OrioPrisco <47635210+OrioPrisco@users      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/11 11:29:48 by OrioPrisc         #+#    #+#              #
-#    Updated: 2023/04/21 12:19:30 by OrioPrisc        ###   ########.fr        #
+#    Updated: 2023/05/23 17:16:57 by OrioPrisc        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ $(SUBMODULES) :
 	make -C $(@D)
 
 $(NAME): $(LIBS) $(OBJS) $(SUBMODULES)
-	cc $(CFLAGS) $(OBJS) $(LFLAGS) -o $@
+	$(CC) $(CFLAGS) $(OBJS) $(LFLAGS) -o $@
 
 COMP_COMMAND = $(CC) -c $(CFLAGS) $(addprefix -I,$(HEADERS_FOLDER)) -MMD -MP $< -o $@
 CONCAT = awk 'FNR==1 && NR!=1 {print ","}{print}'
