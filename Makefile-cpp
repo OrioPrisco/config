@@ -6,11 +6,11 @@
 #    By: OrioPrisco <47635210+OrioPrisco@users      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/11 11:29:48 by OrioPrisc         #+#    #+#              #
-#    Updated: 2023/05/23 17:16:01 by OrioPrisc        ###   ########.fr        #
+#    Updated: 2023/10/20 16:28:27 by OrioPrisc        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC				=	c++
+CXX				=	c++
 
 SRC				=	
 
@@ -18,7 +18,7 @@ NAME			=
 
 OBJ_FOLDER		=	objs/
 
-CFLAGS			=	-Wall -Wextra -Werror -g -std=c++98
+CXXFLAGS		=	-Wall -Wextra -Werror -g -std=c++98
 
 SRC_FOLDER		=	./
 
@@ -35,9 +35,9 @@ all: $(NAME) compile_commands.json
 -include $(DEPENDS)
 
 $(NAME): $(LIBS) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LFLAGS) -o $@
+	$(CXX) $(CXXFLAGS) $(OBJS) $(LFLAGS) -o $@
 
-COMP_COMMAND = $(CC) -c $(CFLAGS) $(addprefix -I,$(HEADERS_FOLDER)) -MMD -MP $< -o $@
+COMP_COMMAND = $(CXX) -c $(CXXFLAGS) $(addprefix -I,$(HEADERS_FOLDER)) -MMD -MP $< -o $@
 CONCAT = awk 'FNR==1 && NR!=1 {print ","}{print}'
 
 $(OBJ_FOLDER):
