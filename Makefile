@@ -6,7 +6,7 @@
 #    By: OrioPrisco <47635210+OrioPrisco@users      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/11 11:29:48 by OrioPrisc         #+#    #+#              #
-#    Updated: 2023/05/23 17:16:57 by OrioPrisc        ###   ########.fr        #
+#    Updated: 2023/11/28 15:35:06 by OrioPrisc        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ LIBS			=	libft/libft.a\
 					libft/libftprintf.a\
 					libft/libgetnextline.a\
 
-#here to ensure things get pull properly
+#here to ensure things get pulled properly
 SUBMODULES		=	libft/.git\
 					libft/ftprintf/.git\
 					libft/getnextline/.git\
