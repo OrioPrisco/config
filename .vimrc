@@ -70,4 +70,5 @@ let g:c_syntax_for_h = 1
 "ignore norminette in this buffer"
 command NoNorm let  b:ale_linters_ignore = {'c' : ['norminette']}
 command HeaderGuard r!HEADER_GUARD=$(echo % | tr "." "_" | tr '[:lower:]' '[:upper:]');printf "\#ifndef $HEADER_GUARD\n\#define $HEADER_GUARD\n\n\#endif"
+command -nargs=1 -range AddClassName <line1>,<line2>s/^\(\w\+\)[ 	]/\1 <args>::/
 
