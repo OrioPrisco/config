@@ -100,10 +100,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias gcc="gcc -Wall -Werror -Wextra -ggdb"
-alias norminette="norminette -R CheckForbiddenSourceHeader"
-alias compile="norminette ft_*.c && gcc ft_*.c main*.c -o a.out && ./a.out"
-
 export USER="OrioPrisco"
 export MAIL="47635210+OrioPrisco@users.noreply.github.com"
 alias lvim="vim -c Layout1"
