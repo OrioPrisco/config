@@ -5,3 +5,5 @@ wget https://raw.githubusercontent.com/cassepipe/ale_norminette/main/norminette.
 #wget https://raw.githubusercontent.com/octol/vim-cpp-enhanced-highlight/master/after/syntax/c.vim -O ~/.vim/after/syntax/c.vim -nc
 mkdir -p ~/.vim/after/syntax/cpp.vim
 wget https://raw.githubusercontent.com/octol/vim-cpp-enhanced-highlight/master/after/syntax/cpp.vim -O ~/.vim/after/syntax/cpp.vim -nc
+
+git clone --depth 1 git@github.com:alvan/vim-closetag.git ~/.vim/pack/git-plugins/start/vim-closetag
