@@ -72,3 +72,9 @@ command NoNorm let  b:ale_linters_ignore = {'c' : ['norminette']}
 command HeaderGuard r!HEADER_GUARD=$(echo % | tr "." "_" | tr '[:lower:]' '[:upper:]');printf "\#ifndef $HEADER_GUARD\n\#define $HEADER_GUARD\n\n\#endif"
 command -nargs=1 -range AddClassName <line1>,<line2>s/^\(\w\+\)[ 	]/\1 <args>::/
 
+"enable matchit"
+filetype plugin on
+packadd! matchit
+
+"overrides for filetype plugin"
+autocmd FileType python set noexpandtab
