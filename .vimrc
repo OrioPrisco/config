@@ -55,8 +55,6 @@ set hlsearch
 "no window resizing when splitting/closing
 set noea
 
-source ~/layout.vim
-
 "highlight match while typing command
 set incsearch
 
@@ -78,3 +76,4 @@ packadd! matchit
 
 "overrides for filetype plugin"
 autocmd FileType python set noexpandtab
+
