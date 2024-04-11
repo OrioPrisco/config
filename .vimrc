@@ -60,6 +60,7 @@ set incsearch
 
 " ALE : enable all linters for c and rust
 let g:ale_linters = {'rust' : 'all', 'c' : 'all'}
+let g:ale_linters_ignore = {'c' : ['norminette']}
 
 "https://stackoverflow.com/questions/65697179/vim-airline-interpreting-h-files-as-cpp-not-c
 "use c filetype for .h files
@@ -67,6 +68,7 @@ let g:c_syntax_for_h = 1
 
 "ignore norminette in this buffer"
 command NoNorm let  b:ale_linters_ignore = {'c' : ['norminette']}
+command Norm let  b:ale_linters_ignore = {'c' : []}
 command HeaderGuard r!HEADER_GUARD=$(echo % | tr "." "_" | tr '[:lower:]' '[:upper:]');printf "\#ifndef $HEADER_GUARD\n\#define $HEADER_GUARD\n\n\#endif"
 command -nargs=1 -range AddClassName <line1>,<line2>s/^\(\w\+\)[ 	]/\1 <args>::/
 
