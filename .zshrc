@@ -102,7 +102,6 @@ source $ZSH/oh-my-zsh.sh
 
 export USER="OrioPrisco"
 export MAIL="47635210+OrioPrisco@users.noreply.github.com"
-alias lvim="vim -c Layout1"
 export EDITOR="vim"
 
 export PATH="$PATH:$HOME/bin/:$HOME/.local/bin"
