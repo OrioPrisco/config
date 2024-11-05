@@ -8,6 +8,7 @@ set autoindent
 set smartindent
 set mouse=a
 set autochdir
+syntax on
 
 " invisible chars
 set list
