@@ -108,3 +108,4 @@ export PATH="$PATH:$HOME/bin/:$HOME/.local/bin"
 
 eval $(thefuck --alias)
 alias neofetch='neofetch --ascii /home/orio/neoart.txt --ascii_colors 208'
+export PAGER="lexx -x4"
