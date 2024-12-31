@@ -62,8 +62,8 @@ set noea
 "highlight match while typing command
 set incsearch
 
-" ALE : enable all linters for c and rust
-let g:ale_linters = {'rust' : 'all', 'c' : 'all'}
+" ALE : enable lintes
+let g:ale_linters = {'rust' : 'all', 'c' : 'all', 'python' : ['pylint']}
 let g:ale_linters_ignore = {'c' : ['norminette']}
 
 "https://stackoverflow.com/questions/65697179/vim-airline-interpreting-h-files-as-cpp-not-c
